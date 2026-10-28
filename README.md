@@ -1,12 +1,12 @@
 # 🛡️ AI Powered Brute Force Detector
 
-A Python-based Security Operations Centre (SOC) dashboard that identifies suspicious authentication activity using rule-based detection and supports AI-assisted alert investigation with Google Gemini.
+A Python based Security Operations Centre (SOC) dashboard that identifies suspicious authentication activity using rule based detection and supports AI assisted alert investigation with Google Gemini.
 
 ## 📌 Project Overview
 
-The AI-Powered Brute Force Detector is a cybersecurity learning project designed to analyse authentication logs, identify potentially suspicious login activity, classify alerts by severity, and present findings through an interactive Streamlit dashboard.
+The AI Powered Brute Force Detector is a cybersecurity learning project designed to analyse authentication logs, identify potentially suspicious login activity, classify alerts by severity, and present findings through an interactive Streamlit dashboard.
 
-The project combines rule-based detection with AI-assisted investigations, alert status tracking, audit history, and reporting features to demonstrate a SOC-style workflow.
+The project combines rule based detection with AI assisted investigations, alert status tracking, audit history, and reporting features to demonstrate a SOC style workflow.
 
 ## 🎯 Objectives
 
@@ -25,7 +25,7 @@ The project combines rule-based detection with AI-assisted investigations, alert
 
 Displays key metrics, including total alerts and the number of LOW, MEDIUM, and HIGH severity alerts.
 
-### 2. Rule-Based Alert Detection
+### 2. Rule Based Alert Detection
 
 Loads authentication records from `data/authentication_logs.csv` and selects failed login records that meet the configured threshold.
 
@@ -48,7 +48,7 @@ These are project-defined rules for demonstration and learning, not universal se
 The dashboard includes:
 
 - Failed login activity charts.
-- Failed-attempt distribution.
+- Failed attempt distribution.
 - Risk level distribution.
 - Highest cumulative failed-attempts table.
 - Threat intelligence summary.
@@ -61,13 +61,13 @@ Chart display settings can be adjusted through the dashboard sidebar.
 
 Supports alert review through search, severity and status filters, alert metrics, and status updates.
 
-### 6. AI-Powered Alert Investigation
+### 6. AI Powered Alert Investigation
 
 Google Gemini AI assists with analysing selected alerts and generating investigation findings.
 
 The investigation workflow is designed to support threat assessment, possible attack identification, evidence review, and recommended analyst actions.
 
-AI-generated findings must be checked against the available evidence. They do not independently confirm that an attack occurred.
+AI generated findings must be checked against the available evidence. They do not independently confirm that an attack occurred.
 
 ### 7. Investigation History and Analyst Notes
 
@@ -75,7 +75,7 @@ Records investigation details such as alert ID, severity, timestamp, investigati
 
 The application maintains an investigation history in Streamlit session state and supports exporting investigation history as JSON.
 
-**Important:** Session-based investigation history is not the same as permanent database storage.
+**Important:** Session based investigation history is not the same as permanent database storage.
 
 ### 8. Persistent Investigation Statuses
 
@@ -110,7 +110,7 @@ The application supports:
 - **Pandas** — authentication log analysis.
 - **Streamlit** — interactive dashboard.
 - **Plotly** — data visualisation.
-- **Google Gemini AI** — AI-assisted investigation.
+- **Google Gemini AI** — AI assisted investigation.
 - **SQLite** — persistent investigation statuses and audit records.
 - **Pytest** — automated testing.
 - **ReportLab** — PDF report generation.
@@ -181,7 +181,7 @@ If the application requires a Gemini API key, create a local `.env` file in the 
 GEMINI_API_KEY=your_api_key_here
 ```
 
-Use the environment-variable name expected by the current application code. Never commit your real API key to GitHub.
+Use the environment variable name expected by the current application code. Never commit your real API key to GitHub.
 
 ### 5. Run the dashboard
 
@@ -199,7 +199,7 @@ Open the local URL displayed in the terminal.
 4. Records meeting the configured threshold are selected as alerts.
 5. The severity function classifies each alert.
 6. The dashboard displays metrics, charts, and alert information.
-7. An analyst can review a selected alert and request AI-assisted investigation.
+7. An analyst can review a selected alert and request AI assisted investigation.
 8. Investigation findings and analyst notes can be reviewed and exported.
 9. Alert status changes are stored in SQLite and recorded in the audit history.
 
@@ -238,9 +238,9 @@ These results reflect the recorded test runs and may change as the project devel
 ## ⚠️ Limitations
 
 - Detection depends on the quality and structure of the authentication dataset.
-- The default detection rule uses failed-attempt counts and does not independently establish malicious intent.
-- AI-generated analysis can be incomplete or incorrect.
-- Session-based investigation history may not survive an application restart.
+- The default detection rule uses failed attempt counts and does not independently establish malicious intent.
+- AI generated analysis can be incomplete or incorrect.
+- Session based investigation history may not survive an application restart.
 - The current severity thresholds are simplified project rules.
 - The project is intended for learning and demonstration, not as a replacement for a production security monitoring platform.
 
@@ -248,12 +248,12 @@ These results reflect the recorded test runs and may change as the project devel
 
 Potential improvements include:
 
-- Password-spraying detection across multiple accounts.
-- Time-window-based detection and correlation.
+- Password spraying detection across multiple accounts.
+- Time window based detection and correlation.
 - Detection of successful logins following suspicious failures.
 - Support for additional authentication log formats.
 - More comprehensive investigation persistence.
-- Improved detection testing and false-positive analysis.
+- Improved detection testing and false positive analysis.
 - Additional dashboard filtering and reporting.
 - Screenshots and a demonstration walkthrough.
 
@@ -269,12 +269,14 @@ For example, after adding the image file:
 
 ## 📚 Learning Outcomes
 
-This project demonstrates practical work with authentication log analysis, rule-based detection, severity classification, SOC dashboard development, AI API integration, alert investigation, database persistence, audit records, reporting, and automated testing.
+This project demonstrates practical work with authentication log analysis, rule based detection, severity classification, SOC dashboard development, AI API integration, alert investigation, database persistence, audit records, reporting, and automated testing.
 
 ## 👤 Author
 
 ### Mohau Klas Phiandi
 
 - GitHub: [@Phiandi](https://github.com/Phiandi)
+
+-Linkedin:linkedin.com/in/mohau-phiandi
 
 This project is part of my ongoing cybersecurity learning and portfolio development.
