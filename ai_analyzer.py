@@ -1,7 +1,6 @@
 import os
 import time
 import importlib
-from click import prompt
 
 try:
     load_dotenv = importlib.import_module("dotenv").load_dotenv
@@ -66,13 +65,49 @@ Provide:
      token ID, and session ID, do not identify a specific attack type.
      State: "Attack type undetermined from the available evidence."
      Explain that further logs are required before classifying the activity.
-3. Risk Level
-   Use the severity already assigned to the alert unless the available
-   evidence clearly indicates otherwise.
 
-4. Recommended SOC Analyst Actions
-   Give practical investigation or containment steps based on the available
-   evidence.
+3. Risk Level
+   - State the severity already assigned to the alert.
+   - Explain what the available evidence supports about the risk.
+   - Do not increase or decrease the assigned severity without clear
+     evidence from the supplied alert.
+   - Report the assigned severity exactly as provided in the alert.
+   - Explain that the assigned severity reflects the detection system's
+     classification, not proof that an attack occurred.
+   - Do not claim that the failed-attempt count is unusual, anomalous,
+     or high-risk unless the alert provides a threshold or other evidence
+     that supports that conclusion.
+   - If the alert does not provide enough evidence to independently assess
+     the risk, state that limitation clearly.
+
+4. Evidence and Information Gaps
+   - List the specific facts provided in the alert.
+   - Identify what remains unknown.
+   - Explain which additional logs or fields would help establish whether
+     the activity is malicious, legitimate, or caused by a system issue.
+   - Do not present missing information as evidence of an attack.
+
+5. Recommended SOC Analyst Actions
+   - Give practical investigation steps in priority order.
+   - Recommend reviewing relevant authentication logs, timestamps,
+     account activity, source IP information if available, and related
+     successful or failed logins.
+   - Recommend containment, such as temporarily restricting an account,
+     only when justified by the evidence and applicable SOC procedures.
+   
+   - Treat token IDs and session IDs as correlation identifiers only.
+     Do not infer token compromise, replay, tampering, or session hijacking
+     from their presence alone.
+   - Recommend validating token status, OAuth error codes, and client
+     application details only when those records are available to the SOC.
+   - Clearly distinguish recommended investigation steps from actions
+     that have actually been performed.
+   - Do not claim that logs, accounts, tokens, or sessions have been
+     checked unless the supplied evidence confirms that check.
+  
+   - Do not claim that any action has already been taken.
+   - Explain what evidence would justify escalation.
+
 
 Keep the response concise, professional, and suitable for a SOC analyst.
 """

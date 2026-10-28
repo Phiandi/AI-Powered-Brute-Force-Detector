@@ -22,3 +22,5 @@ Thumbs.db
 .streamlit/secrets.toml
 
 desktop.ini
+# Local SQLite database
+data/investigation_statuses.db
